@@ -6,8 +6,8 @@ header("Content-Type: application/json; charset=UTF-8");
 // definisco il metodo consentito per la request
 header("Access-Control-Allow-Methods: GET");
 
-include_once "/opt/lampp/htdocs/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/Database_Classe.php";
-include_once "/opt/lampp/htdocs/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/Provincia_Classe.php";
+include_once "/opt/lampp/htdocs/YouTravel/Project_YouTravel/mngm/Database_Classe.php";
+include_once "/opt/lampp/htdocs/YouTravel/Project_YouTravel/mngm/Provincia_Classe.php";
 
 
 $database=new Database();

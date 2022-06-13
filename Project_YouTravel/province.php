@@ -17,7 +17,7 @@
                     var idReg = $("#regioneID").val();
                     //console.log("regione: "+idReg);
                     $.ajax({
-                        url:"http://localhost:8080/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/api/leggiProvLista.php?regioneID="+idReg,
+                        url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvLista.php?regioneID="+idReg,
                         type: "GET",
                         success: function(response){
                             html_list = "<option>Scegli...</option>";
@@ -41,7 +41,7 @@
                     var nomeProv=$("#nomeP").val();
                     //console.log("provincia: "+nomeProv);
                     $.ajax({
-                        url:"http://localhost:8080/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/api/leggiProvInfo.php?nomeP="+nomeProv,
+                        url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvInfo.php?nomeP="+nomeProv,
                         type:"GET",
                         success:function(response){ 
                             html_desc ="<div>";
@@ -78,7 +78,7 @@
                             $("#recensioni").on("click", function(){
                                 console.log("recensioni di "+nomeProv);
                                 $.ajax({
-                                    url:"http://localhost:8080/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/api/leggiRecensione.php?provNome="+nomeProv,
+                                    url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiRecensione.php?provNome="+nomeProv,
                                     type:"GET",
                                     success:function(response){
                                         html_rece="<div style='padding-left:20%'><hr><h6>Esperienze</h6><hr>";
