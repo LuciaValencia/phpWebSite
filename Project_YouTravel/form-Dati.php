@@ -23,7 +23,7 @@
                 var c1="2px solid #333";
                 var c2="#66ff33";
                 $.ajax({
-                    url:"/opt/lampp/htdocs/YouTravel/Project_YouTravel/mngm/contrasto.php",
+                    url:"mngm/contrasto.php",
                     type:"POST",
                     data:"c="+colOK,
                     success: function(response){
@@ -52,7 +52,7 @@
                 var c1="2px solid #EDEDEA";
                 var c2="#333";
                 $.ajax({
-                    url:"/opt/lampp/htdocs/YouTravel/Project_YouTravel/mngm/contrasto.php",
+                    url:"mngm/contrasto.php",
                     type:"POST",
                     data:"c="+colOK,
                     success: function(response){
@@ -76,7 +76,7 @@
                 var idReg = $("#regioneID").val();
                 //console.log("regione: "+idReg);
                 $.ajax({
-                    url:"http://localhost:8080/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/api/leggiProvLista.php?regioneID="+idReg,
+                    url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvLista.php?regioneID="+idReg,
                     type: "GET",
                     success: function(response){
                         html_list = "<option>Scegli...</option>";
@@ -96,7 +96,7 @@
                             var newOne='{"method": "POST", "utente": "'+utente+'", "prov": "'+prov+'", "txt": "'+txt+'", "stelle": "'+stelle+'"}';
                             console.log(newOne);
                              $.ajax({
-                                 url: "http://localhost:8080/TECNOLOGIE_WEB/ESAME/PROVAVERA/mngm/api/newRecensione.php",
+                                 url: "http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/newRecensione.php",
                                  type:"POST",
                                  contentType:"application/json",
                                

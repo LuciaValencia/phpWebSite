@@ -76,7 +76,7 @@
                             
                             //SCRIPT PER VISUALIZZARE RECE
                             $("#recensioni").on("click", function(){
-                                console.log("recensioni di "+nomeProv);
+                                //console.log("recensioni di "+nomeProv);
                                 $.ajax({
                                     url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiRecensione.php?provNome="+nomeProv,
                                     type:"GET",
@@ -85,12 +85,14 @@
                                         for(i=0; i<response.receInArray.length; i++){
                                             testo=response.receInArray[i].testo;
                                             stelle=response.receInArray[i].stelle;
-                                        
+                                            console.log(stelle);
+
                                             html_rece+="<hr></br>"+stelle+" su 5 stelle </br></br>";
                                             html_rece+="<p>≪ "+testo+" ≫</p></br>";
                                         }
                                         html_rece+="</div>";
-                                        $("#foto").html(html_rece);
+                                        //$("#foto").html(html_rece);
+                                        $("span").html(html_rece);
                                         $("#recensioni").html("Nuova Ricerca");
                                         $("#recensioni").on("click",function(){
                                             window.location.reload();
