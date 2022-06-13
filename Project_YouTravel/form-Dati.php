@@ -23,7 +23,7 @@
                 var c1="2px solid #333";
                 var c2="#66ff33";
                 $.ajax({
-                    url:"mngm/contrasto.php",
+                    url:"/opt/lampp/htdocs/YouTravel/Project_YouTravel/mngm/contrasto.php",
                     type:"POST",
                     data:"c="+colOK,
                     success: function(response){
@@ -52,7 +52,7 @@
                 var c1="2px solid #EDEDEA";
                 var c2="#333";
                 $.ajax({
-                    url:"mngm/contrasto.php",
+                    url:"/opt/lampp/htdocs/YouTravel/Project_YouTravel/mngm/contrasto.php",
                     type:"POST",
                     data:"c="+colOK,
                     success: function(response){

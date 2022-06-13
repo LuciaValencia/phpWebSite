@@ -42,7 +42,7 @@ class Provincia{
         $this->nomeReg= $prov["nome-Regione"];
         $this->desc=$prov["descrizione"];
         $this->linkInfo=$prov["link"];
-        $this->foto=$prov["foto"];
+        //$this->foto=$prov["foto"];
         $this->tipologia= array();
         $this->avventura=$prov["adventure"];
             if ($this->avventura==1) {

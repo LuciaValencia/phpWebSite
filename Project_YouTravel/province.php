@@ -50,7 +50,7 @@
                             nomeProv = response.nome;
                             regione = response.regione;
                             tipologia = response.tipoViaggio;
-                            foto = response.foto;
+                            //foto = response.foto;
                             html_desc+= "<div style='padding-top:20%'>";
                             html_desc += "<h5>"+regione+"</h5>";
                             html_desc += "<h1 style='text-transform:uppercase;color:#ff5050'>"+nomeProv+" ("+sigla+")</h1>";
@@ -60,7 +60,7 @@
                                 html_desc+="</ul>";
                             }
                             html_desc+="</div>";
-                            html_desc+="<div id='foto' style='margin-top:15%' align='center'>"+foto+"</div>";
+                            //html_desc+="<div id='foto' style='margin-top:15%' align='center'>"+foto+"</div>";
                             html_desc+="<button id='recensioni' style='width:80%; margin-left:20%; margin-top:10%; border:2px solid #ff5050; color:#ff5050'>Leggi Esperienze</button>";
                             html_desc+= "</div>";
                             
