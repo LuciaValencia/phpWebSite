@@ -74,7 +74,7 @@
             //SCRIPT DI RICERCA
             $("#regioneID").on("change", function(){
                 var idReg = $("#regioneID").val();
-                //console.log("regione: "+idReg);
+                console.log("regione: "+idReg);
                 $.ajax({
                     url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvLista.php?regioneID="+idReg,
                     type: "GET",
