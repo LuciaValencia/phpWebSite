@@ -58,8 +58,11 @@
             </a>
         </div>
     </header>
-    <main>
-            
+    <main style="top:10vh;">
+    <form action="research.php" method="get">
+        Cerca: <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
         <!-- SCEGLI REGIONE > SCEGLI PROVINCIA -->
         <div class="primaRiga" style="height:612px; padding-top:15%;padding-left:2%; padding-right:2%" align="center">
 

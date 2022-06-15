@@ -63,7 +63,7 @@ $sigla=isset($_GET["sigla"])? $_GET["sigla"]:"error";
             </a>
         </div>
     </header>
-    <main>
+    <main style="top:20vh;">
             
         
 
@@ -142,7 +142,7 @@ $sigla=isset($_GET["sigla"])? $_GET["sigla"]:"error";
             },
             error: function(xhr,err,exc){
                 console.log(xhr,err,exc);
-                $("main").html(xhr+err+exc);
+                $("main").html("<h1>"+xhr+err+exc+"</h1>");
             }
         });
 </script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Giu 13, 2022 alle 21:49
+-- Creato il: Giu 15, 2022 alle 16:02
 -- Versione del server: 10.4.14-MariaDB
 -- Versione PHP: 7.4.11
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Province` (
   `numProv` int(11) NOT NULL,
-  `prov-ID` varchar(108) NOT NULL,
+  `provID` varchar(108) NOT NULL,
   `nome` text NOT NULL,
   `idRegione` int(20) NOT NULL,
   `descrizione` text NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `Province` (
 -- Dump dei dati per la tabella `Province`
 --
 
-INSERT INTO `Province` (`numProv`, `prov-ID`, `nome`, `idRegione`, `descrizione`, `link`, `adventure`, `love`, `culture`, `relax`, `history`) VALUES
+INSERT INTO `Province` (`numProv`, `provID`, `nome`, `idRegione`, `descrizione`, `link`, `adventure`, `love`, `culture`, `relax`, `history`) VALUES
 (1, 'AT', 'Asti', 4, 'abcf', '', 1, 1, 1, NULL, 1),
 (2, 'TO', 'Torino', 4, 'ergewrvewdr', '', NULL, 1, 1, 1, 1);
 
@@ -69,7 +69,8 @@ CREATE TABLE `Recensioni` (
 
 INSERT INTO `Recensioni` (`idRece`, `idUtente`, `idProvincia`, `testo`, `stelle`) VALUES
 (1, 1, 1, 'fa schifo', 4),
-(2, 1, 2, 'fantastico!!!', 5);
+(2, 1, 2, 'fantastico!!!', 5),
+(3, 3, 1, '<script>alert(\"Tra sette giorni morirai\");</script>', 4);
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,11 @@ CREATE TABLE `Utenti` (
 --
 
 INSERT INTO `Utenti` (`utenteID`, `nome`, `anni`, `sex`, `persone`, `dove`, `trip_kind`, `email`, `password`) VALUES
-(1, 'Lucia', 'giovani', 'F', 3, '4', 'avventura', 'dasd@sdv.cpom', 'abcd');
+(1, 'Lucia', 'giovani', 'F', 3, '4', 'avventura', 'dasd@sdv.cpom', 'abcd'),
+(2, 'efhwuijods', 'giovani', 'M', 3, '1', 'amore', 'jwfef@dnvc.com', 'vgjhbkl'),
+(3, '&lt;script&gt;alert(1);&lt;/script&gt;', 'giovani', 'F', 2, '1', 'avventura', 'fhgvjbkl@fcgh.cdwc', 'fghuji'),
+(4, 'administrator', '', '', 1, '', '', 'admin@youtravel.com', 'sdfcghjkl'),
+(5, 'hjkl', 'teenager', 'F', 8, '1', 'avventura', 'dfwdsf@ßfv.cds', 'dvwdf');
 
 --
 -- Indici per le tabelle scaricate
@@ -142,7 +147,7 @@ INSERT INTO `Utenti` (`utenteID`, `nome`, `anni`, `sex`, `persone`, `dove`, `tri
 -- Indici per le tabelle `Province`
 --
 ALTER TABLE `Province`
-  ADD PRIMARY KEY (`prov-ID`),
+  ADD PRIMARY KEY (`provID`),
   ADD UNIQUE KEY `numProv` (`numProv`),
   ADD KEY `id-Regione` (`idRegione`);
 
@@ -180,7 +185,7 @@ ALTER TABLE `Province`
 -- AUTO_INCREMENT per la tabella `Recensioni`
 --
 ALTER TABLE `Recensioni`
-  MODIFY `idRece` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idRece` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `Regioni`
@@ -192,7 +197,7 @@ ALTER TABLE `Regioni`
 -- AUTO_INCREMENT per la tabella `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `utenteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `utenteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
