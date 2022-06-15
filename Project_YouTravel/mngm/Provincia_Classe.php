@@ -4,6 +4,7 @@ class Provincia{
     
     public $numProv;
     public $idProv;
+    public $sigla;
     public $nomeProv;
     public $idRegione;
     public $nomeReg;
@@ -31,13 +32,14 @@ class Provincia{
         return $stmt;
     }
     
-    public function leggiProvInfo($provNome){ 
-        $query = "SELECT * FROM Province JOIN Regioni ON Province.idRegione=Regioni.IDregione WHERE nome ='".$provNome."'";
+    public function leggiProvInfo($id){ 
+        $query = "SELECT * FROM Province JOIN Regioni ON Province.idRegione=Regioni.IDregione WHERE provID ='".$id."'";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $prov=$stmt->fetch(PDO::FETCH_ASSOC); //array in cui le keys sono i nomi delle colonne della tabella
-        $this->nomeProv=$provNome;
-        $this->idProv = $prov["prov-ID"];
+        $this->nomeProv=$prov["nome"];
+        $this->sigla=$prov["provID"];
+        $this->idProv = $prov["numProv"];
         $this->idRegione=$prov["idRegione"];
         $this->nomeReg= $prov["nome-Regione"];
         $this->desc=$prov["descrizione"];

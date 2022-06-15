@@ -14,11 +14,11 @@ $database=new Database();
 $conn=$database->getConnection();
 $provincia = new Provincia($conn);
 
-$provNome = isset ($_GET["nomeP"]) ? $_GET["nomeP"] : die(); //IF compatto
-$stmt = $provincia->leggiProvInfo($provNome);
-if ($provincia->idProv != ""){
+$provSigla = isset ($_GET["sigla"]) ? $_GET["sigla"] : die(); //IF compatto
+$stmt = $provincia->leggiProvInfo($provSigla);
+if ($provincia->idProv >0){
     $provInfo=array(
-        "sigla"=>$provincia->idProv,
+        "sigla"=>$provincia->sigla,
         "nome"=>$provincia->nomeProv,
         "regione"=>$provincia->nomeReg,
         "tipoViaggio"=> $provincia->tipologia,

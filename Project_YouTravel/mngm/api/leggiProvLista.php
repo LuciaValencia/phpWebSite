@@ -21,7 +21,7 @@ if($stmt->rowCount()>0){
     $listaProvince["provinciainarray"]=array();
     while($record=$stmt->fetch(PDO::FETCH_ASSOC)){
         $singolaProv=array(
-            "sigla"=>$record["prov-ID"],
+            "sigla"=>$record["provID"],
             "nome"=>$record["nome"]
         );
         array_push($listaProvince["provinciainarray"], $singolaProv);

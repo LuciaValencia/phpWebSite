@@ -1,16 +1,84 @@
 <?php
 $sigla=isset($_GET["sigla"])? $_GET["sigla"]:"error";
-
-echo $sigla;
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+        <!--CSS DA MODIFICARE-->
+        <title><?=$sigla?></title>
+        <link rel="stylesheet" media="all" href="CSS/generalCSS.css">
+    
+        <link rel="stylesheet" type="text/css" href="CSS/css_formIscrizione.css">
+    
+        <!--LIBRERIA JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <!--SCRIPT REST-->
+        <!--<script>
+            $(document).ready(function(){
+                //SCRIPT DI RICERCA
+                $("#regioneID").on("change", function(){
+                    var idReg = $("#regioneID").val();
+                    //console.log("regione: "+idReg);
+                    $.ajax({
+                        url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvLista.php?regioneID="+idReg,
+                        type: "GET",
+                        success: function(response){
+                            html_list = "<option>Scegli...</option>";
+                            for (i=0;i<response.provinciainarray.length;i++){
+                                sigla = response.provinciainarray[i].sigla;
+                                nomeProv = response.provinciainarray[i].nome;
+                                html_list += "<option value='"+sigla+"'>"+nomeProv+" - "+ sigla+"</option>";
+                            }
+                            //html_list+="";
+                            $("#nomeP").html(html_list);
+                        },
+                        error: function(xhr,err,exc){
+                            console.log(xhr,err,exc);
+                            $("#nomeP").html(xhr+err+exc);
+                        }
+
+                    });
+                });
+                
+                //SCRIPT DI DESCRIZIONE
+                $("#nomeP").on("change", function(){
+                    sigla=$("#nomeP").val();
+                    console.log(sigla);
+                    $("#ricercaBTN").html("<a href='provincia.php?sigla="+sigla+"'><button type='button'>Visualizza scheda</button></a>");
+                    
+                    
+                });
+            });
+        </script>-->
+                
+</head>      
+<body>
+    <header style="background-color: #66ff33">
+        <div id="login" style="left:10%;">
+            <a style="color: #000000; display:inline" href="home.php" ><strong>H O M E</strong>
+            </a>
+            <a style="color: #000000; display:inline; margin-left:67%" href="login.php" ><strong>L O G I N</strong>
+            </a>
+        </div>
+    </header>
+    <main>
+            
+        
+
+    </main>
+</body>
+</html>
+
+
 <script>
-    var nomeProv=$("#nomeP").val();
-        //console.log("provincia: "+nomeProv);
+    
         $.ajax({
-            url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvInfo.php?nomeP="+nomeProv,
+            url:"http://localhost:8080/YouTravel/Project_YouTravel/mngm/api/leggiProvInfo.php?sigla=<?=$sigla?>", 
             type:"GET",
             success:function(response){ 
+                console.log(response);
                 html_desc ="<div>";
                 html_desc += "<div class='home-mainColumn' style='width:500px; padding-left:7%; padding-top:4%'>";
                 sigla = response.sigla;
